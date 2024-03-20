@@ -1,16 +1,13 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
+//Link Tags Are basically used to preventing the req going to server.
 const Navbar = () => {
   return (
    <nav className='navbar'>
     <h1>Arijeet 'S Blog</h1>
-    <div className='links'>
-        <a href='/'>Home</a>
-        <a href='/create'style={{
-            color:"white",
-            backgroundColor:' #f1356d',
-            borderRadius:'8px'
-        }}>New BLog</a>
+    <div className='links'>  
+        <Link to='/'>Home</Link>
+        <Link to='/create'>New BLog</Link>
     </div>
    </nav>
   )

@@ -7,8 +7,11 @@ const useFetch = (url) => {
 
   useEffect(() => {
     //fetching th data from server
+    const abbortCont = new AbortController();
+
+
     setTimeout(() => {
-      fetch(url)
+      fetch(url , {signal: abbortCont.signal})
         .then((res) => {
           // So if the Res = False then we throw an error
           if (!res.ok) {
@@ -22,11 +25,16 @@ const useFetch = (url) => {
           setError(null); // if there is no error we declare null for error
         })
         .catch((err) => {
+          if(err.name == 'AbortError'){
+            console.log('Fetch Aborted')
+          } else{
           setIsPending(false); // so when there is an error we hide the loading function
           setError(err.message);
+        }
         });
     }, 1000);
-  }, []);
+      return () => abbortCont.abort();
+  }, [url]);
 
   return {data, isPending , error}
 };
