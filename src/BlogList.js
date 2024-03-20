@@ -1,6 +1,4 @@
-import React from "react";
-
-const BlogList = ({blogs,title}) => {
+const BlogList = ({ blogs, title, }) => {
   return (
     <div className="blog-list">
       <h1>{title}</h1>
