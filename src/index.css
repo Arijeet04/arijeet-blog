@@ -18,6 +18,7 @@
 .navbar .links {
   margin-left: auto;
 }
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
@@ -96,4 +97,35 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .navbar {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .links{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 152px) {
+ .links{
+  display: none;
+  border:10px solid magenta;
+ }
 }
